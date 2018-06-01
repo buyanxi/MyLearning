@@ -99,10 +99,10 @@ int CXMLFileManageIF::WriteSDKConfigInfoXML(char *pcXMLSDKConfigInfoPath, SDKCon
 	if (!xmlDoc.SaveFile(pcXMLSDKConfigInfoPath))
 	{
 		printf("Write file %s fail\n", pcXMLSDKConfigInfoPath);
+		xmlDoc.Clear();
 	}
 
-	//pRootElement->Clear();
-	//xmlDoc.Clear();
+	xmlDoc.Clear();
 
     return 1;
 }
