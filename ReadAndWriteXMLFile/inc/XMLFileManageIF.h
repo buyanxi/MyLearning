@@ -11,6 +11,19 @@ typedef struct _SDK_Config_Info
     int iScreenType;
 }SDKConfigInfo;
 
+typedef enum _Driver_Pos_Info
+{
+    DRIVER_POS_LEFT = 0,
+    DRIVER_POS_RIGHT
+}DriverPosInfo;
+
+typedef enum _Camera_Type_Info
+{
+    CAMERA_640_480 = 0,
+    CAMERA_1280_720,
+    CAMERA_1920_1080
+}CameraTypeInfo;
+
 
 class CXMLFileManageIF
 {

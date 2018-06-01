@@ -18,16 +18,17 @@ public:
 public:
     int ReadSDKConfigInfo(SDKConfigInfo *psSDKConfigInfo);
     int WriteSDKConfigInfo(SDKConfigInfo *psSDKConfigInfo);
+    int WriteDriverPosInfo(DriverPosInfo *psDriverPosInfo);
+    int WriteCameraTypeInfo(CameraTypeInfo *psCameraTypeInfo);
 
 private:
     CManagerConfigFileIF();
 	~CManagerConfigFileIF();
     void Init();
 	void DeInit();
-//	CManagerConfigFileIF(const CManagerConfigFileIF&);
-//	CManagerConfigFileIF& operator=(const CManagerConfigFileIF &);
 
 private:
+    bool   m_bInitFlag;
     char*  m_pchXMLFilePath;
 };
 
