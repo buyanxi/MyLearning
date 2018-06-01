@@ -7,6 +7,7 @@ CManagerConfigData::CManagerConfigData()
     m_bResourceXMLReadFlag = true;
     memset(&m_sSDKConfigInfo, 0 , sizeof(SDKConfigInfo));
     m_eDriverPosInfo = DRIVER_POS_LEFT;
+    m_eCameraTypeInfo = CAMERA_640_480;
 }
 
 CManagerConfigData::~CManagerConfigData()

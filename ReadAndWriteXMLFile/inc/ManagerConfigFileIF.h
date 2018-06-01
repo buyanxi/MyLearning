@@ -18,8 +18,8 @@ public:
 public:
     int ReadSDKConfigInfo(SDKConfigInfo *psSDKConfigInfo);
     int WriteSDKConfigInfo(SDKConfigInfo *psSDKConfigInfo);
-    int WriteDriverPosInfo(DriverPosInfo *psDriverPosInfo);
-    int WriteCameraTypeInfo(CameraTypeInfo *psCameraTypeInfo);
+    int WriteDriverPosInfo(DriverPosInfo sDriverPosInfo);
+    int WriteCameraTypeInfo(CameraTypeInfo sCameraTypeInfo);
 
 private:
     CManagerConfigFileIF();

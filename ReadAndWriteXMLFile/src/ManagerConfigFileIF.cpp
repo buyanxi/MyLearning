@@ -80,12 +80,8 @@ int CManagerConfigFileIF::WriteSDKConfigInfo(SDKConfigInfo *psSDKConfigInfo)
     return CXMLFileManageIF::GetInstance().WriteSDKConfigInfoXML(chSDKConfigInfoPath, psSDKConfigInfo);
 }
 
-int CManagerConfigFileIF::WriteDriverPosInfo(DriverPosInfo *psDriverPosInfo)
+int CManagerConfigFileIF::WriteDriverPosInfo(DriverPosInfo sDriverPosInfo)
 {
-    if (NULL == psDriverPosInfo) {
-        return 0;
-    }
-
     if (!m_bInitFlag) {
         Init();
     }
@@ -95,10 +91,10 @@ int CManagerConfigFileIF::WriteDriverPosInfo(DriverPosInfo *psDriverPosInfo)
         return 0;
     }
 
-    if (DRIVER_POS_LEFT == *psDriverPosInfo) {
+    if (DRIVER_POS_LEFT == sDriverPosInfo) {
         sSDKConfigInfo.iDriverPos = 0;
     }
-    else if (DRIVER_POS_RIGHT == *psDriverPosInfo) {
+    else if (DRIVER_POS_RIGHT == sDriverPosInfo) {
         sSDKConfigInfo.iDriverPos = 1;
     }
     else {
@@ -111,12 +107,8 @@ int CManagerConfigFileIF::WriteDriverPosInfo(DriverPosInfo *psDriverPosInfo)
     return iRet1 & iRet2;
 }
 
-int CManagerConfigFileIF::WriteCameraTypeInfo(CameraTypeInfo *psCameraTypeInfo)
+int CManagerConfigFileIF::WriteCameraTypeInfo(CameraTypeInfo sCameraTypeInfo)
 {
-    if (NULL == psCameraTypeInfo) {
-        return 0;
-    }
-
     if (!m_bInitFlag) {
         Init();
     }
@@ -126,13 +118,13 @@ int CManagerConfigFileIF::WriteCameraTypeInfo(CameraTypeInfo *psCameraTypeInfo)
         return 0;
     }
 
-    if (CAMERA_640_480 == *psCameraTypeInfo) {
+    if (CAMERA_640_480 == sCameraTypeInfo) {
         sSDKConfigInfo.iCameraType = 0;
     }
-    else if (CAMERA_1280_720 == *psCameraTypeInfo) {
+    else if (CAMERA_1280_720 == sCameraTypeInfo) {
         sSDKConfigInfo.iCameraType = 1;
     }
-    else if (CAMERA_1920_1080 == *psCameraTypeInfo) {
+    else if (CAMERA_1920_1080 == sCameraTypeInfo) {
         sSDKConfigInfo.iCameraType = 2;
     }
     else {
