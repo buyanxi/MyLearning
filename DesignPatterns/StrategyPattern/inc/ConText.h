@@ -5,13 +5,20 @@
 #include "IStrategy.h"
 #endif // CISTRATEGY_H
 
+typedef enum _Brocade_Bag
+{
+    FIRST_BROCADE_BAG = 0,
+    SECOND_BROCADE_BAG,
+    THIRD_BROCADE_BAG
+}BrocadeBag;
+
 class CConText
 {
 public:
     CConText();
     virtual ~CConText();
 
-    void NewIStrategy(CIStrategy *pcIStrategy);
+    void CreateIStrategy(BrocadeBag eBrocadeBag);
     void DeleteIStrategy();
     void Operrate();
 

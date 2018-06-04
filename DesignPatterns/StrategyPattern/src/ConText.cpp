@@ -1,5 +1,8 @@
 #include <string.h>
 #include "ConText.h"
+#include "FirstStrategy.h"
+#include "SecondStrategy.h"
+#include "ThirdStrategy.h"
 
 CConText::CConText()
 {
@@ -11,13 +14,23 @@ CConText::~CConText()
     //dtor
 }
 
-void CConText::NewIStrategy(CIStrategy *pcIStrategy)
+void CConText::CreateIStrategy(BrocadeBag eBrocadeBag)
 {
-    if(NULL == pcIStrategy) {
-        return;
+    if (FIRST_BROCADE_BAG == eBrocadeBag) {
+        if (NULL == m_pcIStrategy)
+            m_pcIStrategy = new CFirstStrategy;
     }
+    else if (SECOND_BROCADE_BAG == eBrocadeBag) {
+        if (NULL == m_pcIStrategy)
+            m_pcIStrategy = new CSecondStrategy;
+    }
+    else if(THIRD_BROCADE_BAG == eBrocadeBag) {
+        if (NULL == m_pcIStrategy)
+            m_pcIStrategy = new CThirdStrategy;
+    }
+    else {
 
-    m_pcIStrategy = pcIStrategy;
+    }
 }
 
 void CConText::DeleteIStrategy()
