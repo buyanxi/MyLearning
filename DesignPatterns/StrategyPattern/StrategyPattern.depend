@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1528094542 source:/home/liwangpei2/MyLearningTest/MyLearning/DesignPatterns/StrategyPattern/main.cpp
+	<iostream>
+	"FirstStrategy.h"
+	"SecondStrategy.h"
+	"ThirdStrategy.h"
+	"ConText.h"
+
+1528086052 source:/home/liwangpei2/MyLearningTest/MyLearning/DesignPatterns/StrategyPattern/src/IStrategy.cpp
+	"IStrategy.h"
+
+1528093425 /home/liwangpei2/MyLearningTest/MyLearning/DesignPatterns/StrategyPattern/inc/IStrategy.h
+
+1528094672 source:/home/liwangpei2/MyLearningTest/MyLearning/DesignPatterns/StrategyPattern/src/FirstStrategy.cpp
+	<iostream>
+	"FirstStrategy.h"
+
+1528093759 /home/liwangpei2/MyLearningTest/MyLearning/DesignPatterns/StrategyPattern/inc/FirstStrategy.h
+	"IStrategy.h"
+
+1528094838 source:/home/liwangpei2/MyLearningTest/MyLearning/DesignPatterns/StrategyPattern/src/SecondStrategy.cpp
+	<iostream>
+	"SecondStrategy.h"
+
+1528094973 source:/home/liwangpei2/MyLearningTest/MyLearning/DesignPatterns/StrategyPattern/src/ThirdStrategy.cpp
+	<iostream>
+	"ThirdStrategy.h"
+
+1528093758 /home/liwangpei2/MyLearningTest/MyLearning/DesignPatterns/StrategyPattern/inc/SecondStrategy.h
+	"IStrategy.h"
+
+1528093755 /home/liwangpei2/MyLearningTest/MyLearning/DesignPatterns/StrategyPattern/inc/ThirdStrategy.h
+	"IStrategy.h"
+
+1528094342 source:/home/liwangpei2/MyLearningTest/MyLearning/DesignPatterns/StrategyPattern/src/ConText.cpp
+	<string.h>
+	"ConText.h"
+
+1528094341 /home/liwangpei2/MyLearningTest/MyLearning/DesignPatterns/StrategyPattern/inc/ConText.h
+	"IStrategy.h"
+
