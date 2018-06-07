@@ -35,8 +35,12 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="inc/IKindWomen.h" />
+		<Unit filename="inc/JiaShi.h" />
+		<Unit filename="inc/PanJinLian.h" />
 		<Unit filename="inc/WangPo.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/JiaShi.cpp" />
+		<Unit filename="src/PanJinLian.cpp" />
 		<Unit filename="src/WangPo.cpp" />
 		<Extensions>
 			<envvars />

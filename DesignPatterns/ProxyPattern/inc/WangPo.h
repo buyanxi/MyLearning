@@ -22,6 +22,7 @@ public:
     virtual void HappyWithMan();
 
     void CreateIKindWomen(KindWomen eKindWomen);
+    void DeleteIKindWomen();
 
 private:
     CIKindWomen *m_pcKindWomen;
