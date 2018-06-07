@@ -6,6 +6,13 @@
 #endif // CIKINDWOMEN_H
 
 
+typedef enum _Kind_Women
+{
+    PAN_JIN_LIAN = 0,
+    JIA_SHI
+}KindWomen;
+
+
 class CWangPo : public CIKindWomen
 {
 public:
@@ -14,8 +21,10 @@ public:
     virtual void MakeEyesWithMan();
     virtual void HappyWithMan();
 
+    void CreateIKindWomen(KindWomen eKindWomen);
+
 private:
-    CIKindWomen *m_pKindWomen;
+    CIKindWomen *m_pcKindWomen;
 };
 
 #endif // CWANGPO_H
