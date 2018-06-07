@@ -35,9 +35,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="inc/ManagerConfigData.h" />
 		<Unit filename="inc/ManagerConfigFileIF.h" />
 		<Unit filename="inc/XMLFileManageIF.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/ManagerConfigData.cpp" />
 		<Unit filename="src/ManagerConfigFileIF.cpp" />
 		<Unit filename="src/XMLFileManageIF.cpp" />
 		<Unit filename="tinyxml2/inc/tinyxml2.h" />
