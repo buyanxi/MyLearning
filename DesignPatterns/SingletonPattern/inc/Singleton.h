@@ -5,14 +5,27 @@
 class CSingleton
 {
 public:
-    CSingleton* GetInstance();
+    static CSingleton* GetInstance();
+
+    static CSingleton &_GetInstance()
+    {
+        static CSingleton m_cSingleton;
+        return m_cSingleton;
+    }
+
+public:
+    int Operate();
 
 private:
     CSingleton();
     virtual ~CSingleton();
+    CSingleton(const CSingleton&) {}
+	CSingleton& operator=(const CSingleton&) {}
 
 private:
-    CSingleton* m_cSingleton;
+    static CSingleton* m_pcSingleton;
+
+    //static CSingleton m_cSingleton;
 };
 
 #endif // CSINGLETON_H

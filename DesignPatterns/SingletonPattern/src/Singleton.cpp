@@ -3,7 +3,6 @@
 
 CSingleton::CSingleton()
 {
-    m_cSingleton = NULL;
 }
 
 CSingleton::~CSingleton()
@@ -12,11 +11,14 @@ CSingleton::~CSingleton()
 }
 
 
+CSingleton* CSingleton::m_pcSingleton = new CSingleton;
 CSingleton* CSingleton::GetInstance()
 {
-    if (NULL == m_cSingleton) {
-        m_cSingleton = new CSingleton;
-    }
+    return m_pcSingleton;
+}
 
-    return m_cSingleton;
+int CSingleton::Operate()
+{
+    static int iCount = 1;
+    ++iCount;
 }
