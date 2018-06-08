@@ -1,3 +1,4 @@
+#include <string.h>
 #include "Singleton.h"
 
 CSingleton::CSingleton()
@@ -13,5 +14,9 @@ CSingleton::~CSingleton()
 
 CSingleton* CSingleton::GetInstance()
 {
-    if (NULL == m_cSingleton)
+    if (NULL == m_cSingleton) {
+        m_cSingleton = new CSingleton;
+    }
+
+    return m_cSingleton;
 }
