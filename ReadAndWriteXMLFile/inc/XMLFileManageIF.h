@@ -49,7 +49,6 @@ typedef struct _Camera_External_Parameters
     CamRotateMatrix  sRotateMatrix;
     CamTransMatrix   sTransMatrix;
     CamVanishPoint   sVanishPoint;
-
 }CamExternalParas;
 
 
