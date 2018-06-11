@@ -107,3 +107,79 @@ int CXMLFileManageIF::WriteSDKConfigInfoXML(char *pcXMLSDKConfigInfoPath, SDKCon
 
     return 1;
 }
+
+int CXMLFileManageIF::ReadCamExternalParasInfoXML(char *pcXMLCamExternalParasPath, CamExternalParas *psCamExternalParas)
+{
+    if (NULL == pcXMLCamExternalParasPath || NULL == psCamExternalParas) {
+		return 0;
+	}
+
+    XMLDocument xmlDoc;
+    if (xmlDoc.LoadFile(pcXMLCamExternalParasPath))
+	{
+		printf("Read file: %s fail\n", pcXMLCamExternalParasPath);
+		return 0;
+	}
+
+    XMLElement *xmlRootElement = xmlDoc.RootElement();
+    XMLElement *xmlSubElement = xmlRootElement->FirstChildElement(); //rotate
+    XMLElement *xmlSubElement_Next = xmlSubElement->NextSiblingElement(); //trans
+    XMLElement *xmlSubElement_Next_Next = xmlSubElement_Next->NextSiblingElement(); //vanish point
+
+    xmlSubElement = xmlSubElement->FirstChildElement();
+    xmlSubElement_Next = xmlSubElement_Next->FirstChildElement();
+    xmlSubElement_Next_Next = xmlSubElement_Next_Next->FirstChildElement();
+
+
+    // Read Camera Rotate Matrix
+    int iCamRotateMatrixLength = (sizeof(CamRotateMatrix)/sizeof(float));
+    float *pfCamRotateMatrixData = new float[iCamRotateMatrixLength];
+    for (int i = 0; i < iCamRotateMatrixLength; i++)
+	{
+		const char *pchElement = xmlSubElement->GetText();
+		pfCamRotateMatrixData[i] = atoi(pchElement);
+		xmlSubElement = xmlSubElement->NextSiblingElement();
+	}
+	psCamExternalParas->sRotateMatrix.Rotate_Matrix0 = pfCamRotateMatrixData[0];
+	psCamExternalParas->sRotateMatrix.Rotate_Matrix1 = pfCamRotateMatrixData[1];
+	psCamExternalParas->sRotateMatrix.Rotate_Matrix2 = pfCamRotateMatrixData[2];
+	if (NULL != pfCamRotateMatrixData) {
+        delete []pfCamRotateMatrixData;
+        pfCamRotateMatrixData = NULL;
+    }
+
+    // Read Camera Translation Matrix
+    int iCamTransMatrixLength = (sizeof(CamTransMatrix)/sizeof(float));
+    float *pfCamTransMatrixData = new float[iCamTransMatrixLength];
+    for (int i = 0; i < iCamTransMatrixLength; i++)
+	{
+		const char *pchElement = xmlSubElement_Next->GetText();
+		pfCamTransMatrixData[i] = atoi(pchElement);
+		xmlSubElement_Next = xmlSubElement_Next->NextSiblingElement();
+	}
+	psCamExternalParas->sTransMatrix.Trans_Matrix0 = pfCamTransMatrixData[0];
+	psCamExternalParas->sTransMatrix.Trans_Matrix1 = pfCamTransMatrixData[1];
+	psCamExternalParas->sTransMatrix.Trans_Matrix2 = pfCamTransMatrixData[2];
+	if (NULL != pfCamTransMatrixData) {
+        delete []pfCamTransMatrixData;
+        pfCamTransMatrixData = NULL;
+    }
+
+    // Read Vanish Point Matrix
+    int iCamVanishPointLength = (sizeof(CamVanishPoint)/sizeof(float));
+    float *pfCamVanishPointData = new float[iCamVanishPointLength];
+    for (int i = 0; i < iCamVanishPointLength; i++)
+	{
+		const char *pchElement = xmlSubElement_Next_Next->GetText();
+		pfCamVanishPointData[i] = atoi(pchElement);
+		xmlSubElement_Next_Next = xmlSubElement_Next_Next->NextSiblingElement();
+	}
+	psCamExternalParas->sVanishPoint.Vanish_Point_X = pfCamVanishPointData[0];
+	psCamExternalParas->sVanishPoint.Vanish_Point_Y = pfCamVanishPointData[1];
+	if (NULL != pfCamVanishPointData) {
+        delete []pfCamVanishPointData;
+        pfCamVanishPointData = NULL;
+    }
+
+    return 1;
+}

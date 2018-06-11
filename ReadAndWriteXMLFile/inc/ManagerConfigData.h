@@ -21,8 +21,12 @@ public:
 
     int GetDriverPosInfo(DriverPosInfo& eDriverPosInfo);
     int GetCameraTypeInfo(CameraTypeInfo& eCameraTypeInfo);
+    int GetCameraRotateMatrix(CamRotateMatrix& sCamRotateMatrix);
+    int GetCameraTranslationMatrix(CamTransMatrix& sCamTransMatrix);
+    int GetCameraVanishPoint(CamVanishPoint& sCamVanishPoint);
 
     int ReLoadSDKConfigInfo();
+    int ReLoadCamExternalParasInfo();
 
 private:
     CManagerConfigData();
@@ -30,11 +34,12 @@ private:
 
 
 private:
-    bool            m_bInitFlag;
-    bool            m_bResourceXMLReadFlag;
-    SDKConfigInfo   m_sSDKConfigInfo;
-    DriverPosInfo   m_eDriverPosInfo;
-    CameraTypeInfo  m_eCameraTypeInfo;
+    bool                m_bInitFlag;
+    bool                m_bResourceXMLReadFlag;
+    SDKConfigInfo       m_sSDKConfigInfo;
+    DriverPosInfo       m_eDriverPosInfo;
+    CameraTypeInfo      m_eCameraTypeInfo;
+    CamExternalParas    m_sCamExternalParasInfo;
 
 };
 

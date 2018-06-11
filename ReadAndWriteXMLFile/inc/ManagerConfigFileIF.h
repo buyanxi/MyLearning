@@ -21,6 +21,8 @@ public:
     int WriteDriverPosInfo(DriverPosInfo sDriverPosInfo);
     int WriteCameraTypeInfo(CameraTypeInfo sCameraTypeInfo);
 
+    int ReadCamExternalParasInfo(CamExternalParas *psCamExternalParas);
+
 private:
     CManagerConfigFileIF();
 	~CManagerConfigFileIF();

@@ -136,3 +136,21 @@ int CManagerConfigFileIF::WriteCameraTypeInfo(CameraTypeInfo sCameraTypeInfo)
 
     return iRet1 & iRet2;
 }
+
+int CManagerConfigFileIF::ReadCamExternalParasInfo(CamExternalParas *psCamExternalParas)
+{
+    if (NULL == psCamExternalParas || NULL == m_pchXMLFilePath) {
+        return 0;
+    }
+
+    if (!m_bInitFlag) {
+        Init();
+    }
+
+    char chCamExternalParasInfoPath[256];
+    strcpy(chCamExternalParasInfoPath, m_pchXMLFilePath);
+    strcat(chCamExternalParasInfoPath, "CamaraExternal.xml");
+
+    return CXMLFileManageIF::GetInstance().ReadCamExternalParasInfoXML(chCamExternalParasInfoPath, psCamExternalParas);
+
+}

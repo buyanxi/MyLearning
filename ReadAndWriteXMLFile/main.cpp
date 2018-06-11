@@ -29,6 +29,15 @@ int main()
     CameraTypeInfo eCameraTypeInfo1;
     CManagerConfigData::GetInstance().GetCameraTypeInfo(eCameraTypeInfo1);
 
+    CamRotateMatrix sCamRotateMatrix;
+    CManagerConfigData::GetInstance().GetCameraRotateMatrix(sCamRotateMatrix);
+
+    CamTransMatrix sCamTransMatrix;
+    CManagerConfigData::GetInstance().GetCameraTranslationMatrix(sCamTransMatrix);
+
+    CamVanishPoint sCamVanishPoint;
+    CManagerConfigData::GetInstance().GetCameraVanishPoint(sCamVanishPoint);
+
 
     CManagerConfigData::GetInstance().DeInit();
 
