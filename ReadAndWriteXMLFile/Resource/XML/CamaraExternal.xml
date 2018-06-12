@@ -1,0 +1,16 @@
+<Camara_External_Parameters>
+    <Rotate_Matrix>
+        <Rotate_Matrix0>0.125400</Rotate_Matrix0>
+        <Rotate_Matrix1>0.155400</Rotate_Matrix1>
+        <Rotate_Matrix2>0.175400</Rotate_Matrix2>
+    </Rotate_Matrix>
+    <Trans_Matrix>
+        <Trans_Matrix0>-124.529999</Trans_Matrix0>
+        <Trans_Matrix1>356.123413</Trans_Matrix1>
+        <Trans_Matrix2>3214.852051</Trans_Matrix2>
+    </Trans_Matrix>
+    <Vanish_Point>
+        <Vanish_Point_X>396.209991</Vanish_Point_X>
+        <Vanish_Point_Y>100.250000</Vanish_Point_Y>
+    </Vanish_Point>
+</Camara_External_Parameters>
