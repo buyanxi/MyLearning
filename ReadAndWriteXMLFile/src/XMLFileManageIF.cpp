@@ -69,32 +69,32 @@ int CXMLFileManageIF::WriteSDKConfigInfoXML(char *pcXMLSDKConfigInfoPath, SDKCon
     sprintf(chInt2Char, "%d",  psSDKConfigInfo->iCarDesignType);
     XMLElement* xmlSubElement = xmlDoc.NewElement( "iCarDesignType" );
     xmlSubElement->SetText(chInt2Char);
-    pRootElement->InsertEndChild(xmlSubElement);
+    pRootElement->LinkEndChild(xmlSubElement);
 
     sprintf(chInt2Char, "%d",  psSDKConfigInfo->iDriverPos);
     xmlSubElement = xmlDoc.NewElement( "iDriverPos" );
     xmlSubElement->SetText(chInt2Char);
-    pRootElement->InsertEndChild(xmlSubElement);
+    pRootElement->LinkEndChild(xmlSubElement);
 
     sprintf(chInt2Char, "%d",  psSDKConfigInfo->iCameraType);
     xmlSubElement = xmlDoc.NewElement( "iCameraType" );
     xmlSubElement->SetText(chInt2Char);
-    pRootElement->InsertEndChild(xmlSubElement);
+    pRootElement->LinkEndChild(xmlSubElement);
 
     sprintf(chInt2Char, "%d",  psSDKConfigInfo->iImageType);
     xmlSubElement = xmlDoc.NewElement( "iImageType" );
     xmlSubElement->SetText(chInt2Char);
-    pRootElement->InsertEndChild(xmlSubElement);
+    pRootElement->LinkEndChild(xmlSubElement);
 
     sprintf(chInt2Char, "%d",  psSDKConfigInfo->iImageMode);
     xmlSubElement = xmlDoc.NewElement("iImageMode");
     xmlSubElement->SetText(chInt2Char);
-    pRootElement->InsertEndChild(xmlSubElement);
+    pRootElement->LinkEndChild(xmlSubElement);
 
     sprintf(chInt2Char, "%d",  psSDKConfigInfo->iScreenType);
     xmlSubElement = xmlDoc.NewElement( "iScreenType" );
     xmlSubElement->SetText(chInt2Char);
-    pRootElement->InsertEndChild(xmlSubElement);
+    pRootElement->LinkEndChild(xmlSubElement);
 
 
 	if (!xmlDoc.SaveFile(pcXMLSDKConfigInfoPath))
@@ -229,44 +229,44 @@ int CXMLFileManageIF::WriteCamExternalParasInfoXML(char *pcXMLCamExternalParasPa
     sprintf(chFloat2Char, "%f",  psCamExternalParas->sRotateMatrix.Rotate_Matrix0);
     XMLElement* xmlSubElement = xmlDoc.NewElement( "Rotate_Matrix0" );
     xmlSubElement->SetText(chFloat2Char);
-    pRotateElement->InsertEndChild(xmlSubElement);
+    pRotateElement->LinkEndChild(xmlSubElement);
 
     sprintf(chFloat2Char, "%f",  psCamExternalParas->sRotateMatrix.Rotate_Matrix1);
     xmlSubElement = xmlDoc.NewElement( "Rotate_Matrix1" );
     xmlSubElement->SetText(chFloat2Char);
-    pRotateElement->InsertEndChild(xmlSubElement);
+    pRotateElement->LinkEndChild(xmlSubElement);
 
     sprintf(chFloat2Char, "%f",  psCamExternalParas->sRotateMatrix.Rotate_Matrix2);
     xmlSubElement = xmlDoc.NewElement( "Rotate_Matrix2" );
     xmlSubElement->SetText(chFloat2Char);
-    pRotateElement->InsertEndChild(xmlSubElement);
+    pRotateElement->LinkEndChild(xmlSubElement);
 
     //Write Camera Translation Matrix
     sprintf(chFloat2Char, "%f",  psCamExternalParas->sTransMatrix.Trans_Matrix0);
     xmlSubElement = xmlDoc.NewElement( "Trans_Matrix0" );
     xmlSubElement->SetText(chFloat2Char);
-    pTransElement->InsertEndChild(xmlSubElement);
+    pTransElement->LinkEndChild(xmlSubElement);
 
     sprintf(chFloat2Char, "%f",  psCamExternalParas->sTransMatrix.Trans_Matrix1);
     xmlSubElement = xmlDoc.NewElement( "Trans_Matrix1" );
     xmlSubElement->SetText(chFloat2Char);
-    pTransElement->InsertEndChild(xmlSubElement);
+    pTransElement->LinkEndChild(xmlSubElement);
 
     sprintf(chFloat2Char, "%f",  psCamExternalParas->sTransMatrix.Trans_Matrix2);
     xmlSubElement = xmlDoc.NewElement( "Trans_Matrix2" );
     xmlSubElement->SetText(chFloat2Char);
-    pTransElement->InsertEndChild(xmlSubElement);
+    pTransElement->LinkEndChild(xmlSubElement);
 
     //Write Vanish Point Matrix
     sprintf(chFloat2Char, "%f",  psCamExternalParas->sVanishPoint.Vanish_Point_X);
     xmlSubElement = xmlDoc.NewElement( "Vanish_Point_X" );
     xmlSubElement->SetText(chFloat2Char);
-    pVanishPointElement->InsertEndChild(xmlSubElement);
+    pVanishPointElement->LinkEndChild(xmlSubElement);
 
     sprintf(chFloat2Char, "%f",  psCamExternalParas->sVanishPoint.Vanish_Point_Y);
     xmlSubElement = xmlDoc.NewElement( "Vanish_Point_Y" );
     xmlSubElement->SetText(chFloat2Char);
-    pVanishPointElement->InsertEndChild(xmlSubElement);
+    pVanishPointElement->LinkEndChild(xmlSubElement);
 
 
     if (!xmlDoc.SaveFile(pcXMLCamExternalParasPath))
