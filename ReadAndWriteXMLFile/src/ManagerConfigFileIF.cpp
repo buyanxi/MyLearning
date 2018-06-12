@@ -154,3 +154,65 @@ int CManagerConfigFileIF::ReadCamExternalParasInfo(CamExternalParas *psCamExtern
     return CXMLFileManageIF::GetInstance().ReadCamExternalParasInfoXML(chCamExternalParasInfoPath, psCamExternalParas);
 
 }
+
+int CManagerConfigFileIF::WriteCamExternalParasInfo(CamExternalParas *psCamExternalParas)
+{
+    if (NULL == psCamExternalParas || NULL == m_pchXMLFilePath) {
+        return 0;
+    }
+
+    if (!m_bInitFlag) {
+        Init();
+    }
+
+    char chCamExternalParasInfoPath[256];
+    strcpy(chCamExternalParasInfoPath, m_pchXMLFilePath);
+    strcat(chCamExternalParasInfoPath, "CamaraExternal.xml");
+
+    return CXMLFileManageIF::GetInstance().WriteCamExternalParasInfoXML(chCamExternalParasInfoPath, psCamExternalParas);
+}
+
+int CManagerConfigFileIF::WriteCamRotateAndTransParasInfo(CamRotateMatrix *psCamRotateMatrix, CamTransMatrix *psCamTransMatrix)
+{
+    if (NULL == psCamRotateMatrix || psCamTransMatrix == NULL) {
+        return 0;
+    }
+
+    CamExternalParas sCamExternalParas;
+    if (!ReadCamExternalParasInfo(&sCamExternalParas)) {
+        return 0;
+    }
+
+    sCamExternalParas.sRotateMatrix.Rotate_Matrix0 = psCamRotateMatrix->Rotate_Matrix0;
+    sCamExternalParas.sRotateMatrix.Rotate_Matrix1 = psCamRotateMatrix->Rotate_Matrix1;
+    sCamExternalParas.sRotateMatrix.Rotate_Matrix2 = psCamRotateMatrix->Rotate_Matrix2;
+
+    sCamExternalParas.sTransMatrix.Trans_Matrix0 = psCamTransMatrix->Trans_Matrix0;
+    sCamExternalParas.sTransMatrix.Trans_Matrix1 = psCamTransMatrix->Trans_Matrix1;
+    sCamExternalParas.sTransMatrix.Trans_Matrix2 = psCamTransMatrix->Trans_Matrix2;
+
+    int iRet1 = WriteCamExternalParasInfo(&sCamExternalParas);
+    int iRet2 = CManagerConfigData::GetInstance().ReLoadCamExternalParasInfo();
+
+    return iRet1 & iRet2;
+}
+
+int CManagerConfigFileIF::WriteCamVanishPointParasInfo(CamVanishPoint *psCamVanishPoint)
+{
+    if (NULL == psCamVanishPoint) {
+        return 0;
+    }
+
+    CamExternalParas sCamExternalParas;
+    if (!ReadCamExternalParasInfo(&sCamExternalParas)) {
+        return 0;
+    }
+
+    sCamExternalParas.sVanishPoint.Vanish_Point_X = psCamVanishPoint->Vanish_Point_X;
+    sCamExternalParas.sVanishPoint.Vanish_Point_Y = psCamVanishPoint->Vanish_Point_Y;
+
+    int iRet1 = WriteCamExternalParasInfo(&sCamExternalParas);
+    int iRet2 = CManagerConfigData::GetInstance().ReLoadCamExternalParasInfo();
+
+    return iRet1 & iRet2;
+}

@@ -22,6 +22,9 @@ public:
     int WriteCameraTypeInfo(CameraTypeInfo sCameraTypeInfo);
 
     int ReadCamExternalParasInfo(CamExternalParas *psCamExternalParas);
+    int WriteCamExternalParasInfo(CamExternalParas *psCamExternalParas);
+    int WriteCamRotateAndTransParasInfo(CamRotateMatrix *psCamRotateMatrix, CamTransMatrix *psCamTransMatrix);
+    int WriteCamVanishPointParasInfo(CamVanishPoint *psCamVanishPoint);
 
 private:
     CManagerConfigFileIF();
