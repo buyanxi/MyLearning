@@ -35,13 +35,20 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="inc/BlackHuman.h" />
+		<Unit filename="inc/BlackHumanFactory.h" />
 		<Unit filename="inc/IHuman.h" />
+		<Unit filename="inc/IHumanFactory.h" />
 		<Unit filename="inc/WhiteHuman.h" />
+		<Unit filename="inc/WhiteHumanFactory.h" />
 		<Unit filename="inc/YellowHuman.h" />
+		<Unit filename="inc/YellowHumanFactory.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/BlackHuman.cpp" />
+		<Unit filename="src/BlackHumanFactory.cpp" />
 		<Unit filename="src/WhiteHuman.cpp" />
+		<Unit filename="src/WhiteHumanFactory.cpp" />
 		<Unit filename="src/YellowHuman.cpp" />
+		<Unit filename="src/YellowHumanFactory.cpp" />
 		<Extensions>
 			<envvars />
 			<code_completion />
