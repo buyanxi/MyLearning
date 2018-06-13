@@ -1,0 +1,221 @@
+c++设计模式之工厂模式
+https://www.cnblogs.com/cxq0017/p/6544517.html
+
+
+1：简单工厂模式
+
+　　简单工厂模式是属于创建型模式，又叫做静态工厂方法(static Factory Method)模式，简单工厂模式是由一个工厂对象决定创建出来哪一种产品类的实例.
+　　简单工厂模式的实质是由一个工厂类根据传入的参数，动态决定应该创建哪一类产品类(这些产品类继承自一个父类或接口)的实例。打个比方
+　　假设有一个工厂，他能生产出A、B两种产品。当客户需要产品的时候一定要告诉共产是哪种产品，是A还是B。当新增加一种新产品的时候，那么就要去修改工厂的类。　
+    
+    简单工厂模式看起来跟策略模式很类似
+    
+// Factory.cpp : 定义控制台应用程序的入口点。
+//
+
+#include "stdafx.h"
+#include<iostream>
+
+using namespace std;
+
+class Product
+{
+public:
+    virtual void show() = 0;  
+};
+
+class Product_A : public Product
+{
+public:
+    void show()
+    {
+        cout << "Product_A" << endl;
+    }
+};
+
+class Product_B : public Product
+{
+public:
+    void show()
+    {
+        cout << "Product_B" << endl;
+    }
+};
+
+class Factory
+{
+public:
+    Product* Create(int i)
+    {
+        switch (i)
+        {
+        case 1:
+            return new Product_A;
+            break;
+        case 2:
+            return new Product_B;
+            break;
+        default:
+            break;
+        }
+    }
+};
+
+int main()
+{
+    Factory *factory = new Factory();
+    factory->Create(1)->show();
+    factory->Create(2)->show();
+    system("pause");
+    return 0;
+}
+
+二：工厂方法模式：
+
+　　上面的简单工厂模式的缺点是当新增产品的时候就要去修改工厂的类，这就违反了开放封闭原则，(类、模块、函数)可以扩展，但是不可以修改，于是，就出现了工厂方法模式。所谓工厂方法模式，是指定义一个用于创建对象的接口，让子类决定实例化哪一个类。打个比方
+    现在有A、B两种产品，那么久开两个工厂。工厂A负责生产A产品，工厂B负责生产B种产品。这时候客户不需要告诉共产生产哪种产品了，只需要告诉共产生产就可以了。
+#include "stdafx.h"
+#include<iostream>
+
+using namespace std;
+
+class Product
+{
+public:
+    virtual void show() = 0;  
+};
+
+class Product_A : public Product
+{
+public:
+    void show()
+    {
+        cout << "Product_A" << endl;
+    }
+};
+
+class Product_B : public Product
+{
+public:
+    void show()
+    {
+        cout << "Product_B" << endl;
+    }
+};
+
+class Factory
+{
+public:
+    virtual Product* create() = 0;
+};
+
+class Factory_A : public Factory
+{
+public:
+    Product* create()
+    {
+        return new Product_A;
+    }
+};
+
+class Factory_B : public Factory
+{
+public:
+    Product* create()
+    {
+        return new Product_B;
+    }
+};
+
+int main()
+{
+    Factory_A* productA = new Factory_A();
+    Factory_B* productB = new Factory_B();
+
+    productA->create()->show();
+    productB->create()->show();
+    system("pause");
+    return 0;
+}
+
+抽象工厂模式
+
+　　为什么要有抽象工厂模式，假如我们A产品中有A1和A2两种型号的厂品，B产品中有B1和B2两种型号的厂品，那怎么办，上面两种工厂模式就不能解决了。这个时候抽象工厂模式就登场了。还是开设两家工厂，工厂A负责生产A1 、A2型号产品，B工厂负责生产B1、B2型号的产品。  
+    提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。  适用性：一个系统要独立于它的产品的创建、组合和表示时。一个系统要由多个产品系列中的一个来配置时。当你要强调一系列相关的产品对象的设计以便进行联合使用时。当你提供一个产品类库，而只想显示它们的接口而不是实现时。
+#include <iostream>    
+using namespace std;  
+  
+//定义抽象类  
+class product1  
+{  
+public:  
+    virtual void show() = 0;  
+};  
+  
+//定义具体类  
+class product_A1 :public product1  
+{  
+public:  
+    void show(){ cout << "product A1" << endl; }  
+};  
+  
+class product_B1 :public product1  
+{  
+public:  
+    void show(){ cout << "product B1" << endl; }  
+};  
+  
+//定义抽象类  
+class product2  
+{  
+public:  
+    virtual void show() = 0;  
+};  
+  
+//定义具体类  
+class product_A2 :public product2  
+{  
+public:  
+    void show(){ cout << "product A2" << endl; }  
+};  
+  
+class product_B2 :public product2  
+{  
+public:  
+    void show(){ cout << "product B2" << endl; }  
+};  
+  
+  
+class Factory  
+{  
+public:  
+    virtual product1 *creat1() = 0;  
+    virtual product2 *creat2() = 0;  
+};  
+  
+class FactoryA  
+{  
+public:  
+    product1 *creat1(){ return new product_A1(); }  
+    product2 *creat2(){ return new product_A2(); }  
+};  
+  
+class FactoryB  
+{  
+public:  
+    product1 *creat1(){ return new product_B1(); }  
+    product2 *creat2(){ return new product_B2(); }  
+};  
+  
+int main()  
+{  
+    FactoryA *factoryA = new FactoryA();  
+    factoryA->creat1()->show();  
+    factoryA->creat2()->show();  
+  
+    FactoryB *factoryB = new FactoryB();  
+    factoryB->creat1()->show();  
+    factoryB->creat2()->show();  
+  
+    return 0;  
+}
