@@ -1,0 +1,30 @@
+执行命令：
+g++ main.cpp -o thread -lpthread
+./thread
+
+
+
+运行结果：
+我是主函数哦，我正在创建线程，呵呵
+线程1被创建
+线程2被创建
+我是主函数哦，我正在等待线程完成任务阿，呵呵
+thread1 : I'm thread 1
+thread1 : number = 0
+thread2 : I'm thread 2
+thread2 : number = 1
+thread1 : number = 2
+thread2 : number = 3
+thread1 : number = 4
+thread2 : number = 5
+thread1 : number = 6
+thread1 : number = 7
+thread2 : number = 8
+thread1 : number = 9
+thread2 : number = 10
+thread1 :主函数在等我完成任务吗？
+线程1已经结束
+thread2 :主函数在等我完成任务吗？
+线程2已经结束
+
+
