@@ -12,7 +12,7 @@ int               g_iNumber=0, i;
 
 void *thread1(void *arg1)
 {
-    printf ("thread1 : I'm thread 1\n");
+    //printf ("thread1 : I'm thread 1\n");
     for (i = 0; i < MAX; i++)
     {
         printf("thread1 : number = %d\n", g_iNumber);
@@ -27,7 +27,7 @@ void *thread1(void *arg1)
 
 void *thread2(void *arg2)
 {
-    printf("thread2 : I'm thread 2\n");
+    //printf("thread2 : I'm thread 2\n");
     for (i = 0; i < MAX; i++)
     {
         printf("thread2 : number = %d\n", g_iNumber);
