@@ -16,9 +16,9 @@ void *thread1(void *arg1)
     for (i = 0; i < MAX; i++)
     {
         printf("thread1 : number = %d\n",number);
-        pthread_mutex_lock(&mut);
+        //pthread_mutex_lock(&mut);
         number++;
-        pthread_mutex_unlock(&mut);
+        //pthread_mutex_unlock(&mut);
         sleep(2);
     }
     printf("thread1 :主函数在等我完成任务吗？\n");
@@ -31,9 +31,9 @@ void *thread2(void *arg2)
     for (i = 0; i < MAX; i++)
     {
         printf("thread2 : number = %d\n",number);
-        pthread_mutex_lock(&mut);
+        //pthread_mutex_lock(&mut);
         number++;
-        pthread_mutex_unlock(&mut);
+        //pthread_mutex_unlock(&mut);
         sleep(3);
     }
     printf("thread2 :主函数在等我完成任务吗？\n");
@@ -73,6 +73,7 @@ int main()
 {
     /*用默认属性初始化互斥锁*/
     pthread_mutex_init(&mut, NULL);
+
     printf("我是主函数哦，我正在创建线程，呵呵\n");
     thread_create();
     printf("我是主函数哦，我正在等待线程完成任务阿，呵呵\n");
