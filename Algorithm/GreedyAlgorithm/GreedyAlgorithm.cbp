@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="inc" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -32,7 +34,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="inc/MaximunActivity.h" />
+		<Unit filename="inc/MinimumMoney.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/MaximunActivity.cpp" />
+		<Unit filename="src/MinimumMoney.cpp" />
 		<Extensions>
 			<envvars />
 			<code_completion />
