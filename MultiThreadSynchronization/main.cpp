@@ -1,6 +1,5 @@
 #include <pthread.h>
 #include <stdio.h>
-#include <sys/time.h>
 #include <string.h>
 #include <unistd.h>
 
@@ -44,7 +43,7 @@ void thread_create()
 {
     int temp;
     memset(&g_sThread, 0, sizeof(g_sThread));
-    /*创建线程*/
+
     if((temp = pthread_create(&g_sThread[0], NULL, thread1, NULL)) != 0)
         printf("线程1创建失败!\n");
     else
@@ -58,7 +57,6 @@ void thread_create()
 
 void thread_wait(void)
 {
-    /*等待线程结束*/
     if(g_sThread[0] !=0) {
         pthread_join(g_sThread[0],NULL);
         printf("线程1已经结束\n");
@@ -71,12 +69,13 @@ void thread_wait(void)
 
 int main()
 {
-    /*用默认属性初始化互斥锁*/
     pthread_mutex_init(&g_sMutex, NULL);
 
     printf("我是主函数哦，我正在创建线程，呵呵\n");
     thread_create();
+
     printf("我是主函数哦，我正在等待线程完成任务阿，呵呵\n");
     thread_wait();
+
     return 0;
 }
