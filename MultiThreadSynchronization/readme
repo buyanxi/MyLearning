@@ -2,6 +2,8 @@
 g++ main.cpp -o thread -lpthread
 ./thread
 
+如果不想通过上述命令，通过编译执行，则在工程的Project build options->Linker settings->Link libraries下面添加pthread即可
+
 
 
 运行结果(互锁)：
