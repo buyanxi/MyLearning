@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="inc" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -32,7 +33,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="inc/NodeType.h" />
+		<Unit filename="inc/SingleLinkedList.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/SingleLinkedList.cpp" />
 		<Extensions>
 			<envvars />
 			<code_completion />
