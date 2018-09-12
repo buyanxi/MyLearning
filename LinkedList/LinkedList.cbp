@@ -34,10 +34,12 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="inc/CircleLinkedList.h" />
+		<Unit filename="inc/DoublyLinkedList.h" />
 		<Unit filename="inc/NodeType.h" />
 		<Unit filename="inc/SingleLinkedList.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/CircleLinkedList.cpp" />
+		<Unit filename="src/DoublyLinkedList.cpp" />
 		<Unit filename="src/SingleLinkedList.cpp" />
 		<Extensions>
 			<envvars />

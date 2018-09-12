@@ -1,11 +1,13 @@
 #include <iostream>
 #include "SingleLinkedList.h"
 #include "CircleLinkedList.h"
+#include "DoublyLinkedList.h"
 
 using namespace std;
 
 CSingleLinkedList  g_cSingleLinkedList;
 CCircleLinkedList  g_cCircleLinkedList;
+CDoublyLinkedList  g_cDoublyLinkedList;
 int main()
 {
 //    LinkedList *head_Head;
@@ -52,7 +54,7 @@ int main()
     }
 #endif
 
-#if 1
+#if 0
 //    ListNode* head_Head;
 //    head_Head = g_cCircleLinkedList.HeadCreateLinkedList();
 //    g_cCircleLinkedList.PrintLinkedList(head_Head);
@@ -78,6 +80,11 @@ int main()
         printf("The linked list has not loop!\n");
     }
 #endif
+
+    DoublyListNode* head_Head;
+    head_Head = g_cDoublyLinkedList.HeadCreateLinkedList();
+    g_cDoublyLinkedList.PrintLinkedList(head_Head);
+
 
     return 0;
 }

@@ -12,4 +12,12 @@ typedef struct Node
     Node* next;
 }ListNode, *LinkedList;
 
+
+typedef struct DoublyNode
+{
+    int data;
+    DoublyNode* next;
+    DoublyNode* pre;
+}DoublyListNode, *DoublyLinkedList;
+
 #endif // CXX_NODETYPE_H
