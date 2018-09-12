@@ -181,6 +181,22 @@ void CSingleLinkedList::PrintLinkedList(Node* head)
     printf("\n");
 }
 
+int CSingleLinkedList::GetLinkedListLength(Node* head)
+{
+    int iLength = 0;
+    if (NULL == head) {
+        printf("The linked list is non-existent!\n");
+        return -1;
+    }
+
+    while (head->next) {
+        ++iLength;
+        head = head->next;
+    }
+
+    return iLength;
+}
+
 bool CSingleLinkedList::IsEmptyLinkedList(Node* head)
 {
     if (NULL == head) {

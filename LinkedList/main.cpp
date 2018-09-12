@@ -22,6 +22,8 @@ int main()
     if (!bFlag) {
         g_cSingleLinkedList.PrintLinkedList(head_Tail);
     }
+    int iLength = g_cSingleLinkedList.GetLinkedListLength(head_Tail);
+    printf("The length of linked list is %d.\n", iLength);
 
     int iFirstPos = 0, iCount = 0;
     g_cSingleLinkedList.SearchDataFromLinkedList(head_Tail, 3, iFirstPos, iCount);
@@ -32,7 +34,7 @@ int main()
         g_cSingleLinkedList.PrintLinkedList(head_Tail);
     }
     else {
-        printf("The linked list is deleted successfully!\n");
+        printf("The linked list is cleared successfully!\n");
     }
 
     return 0;
