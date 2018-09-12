@@ -66,24 +66,23 @@ void CSingleLinkedList::InsertLinkedList(Node* head, int iData, int iPos)
     pNewNode->data = iData;
 
     int iCount = -1;
-    Node* p = head;
-    while (p->next) {
+    while (head->next) {
         ++iCount;
         if (iPos == iCount) {
-            pNewNode->next = p->next;
-            p->next = pNewNode;
+            pNewNode->next = head->next;
+            head->next = pNewNode;
             printf("The data %d is inserted successfully!\n", iData);
             break;
         }
-        p = p->next;
+        head = head->next;
     }
 
     if (iCount < iPos) {
         printf("The position %d to be inserted is across the border of list!\n", iPos);
         printf("The data %d is inserted in the tail of list!\n", iData);
 
-        pNewNode->next = p->next;
-        p->next = pNewNode;
+        pNewNode->next =head->next;
+        head->next = pNewNode;
     }
 }
 
@@ -94,22 +93,20 @@ void CSingleLinkedList::DeleteDataFromLinkedList(Node* head, int iData)
         return;
     }
 
-    Node* p = head;
     Node* pDeleteNode;
     bool bDeleteFlag = false;
-    while (p->next) {
-        if (p->next->data == iData) {
-            pDeleteNode = p->next;
-            p->next = p->next->next;
+    while (head->next) {
+        if (head->next->data == iData) {
+            pDeleteNode = head->next;
+            head->next = head->next->next;
 
             delete pDeleteNode;
             pDeleteNode = NULL;
 
             bDeleteFlag = true;
-
             continue;
         }
-        p = p->next;
+        head = head->next;
     }
 
     if (bDeleteFlag) {
