@@ -24,6 +24,7 @@ public:
     void DeleteDataFromLinkedList(Node* head, int iData);
     void ClearLinkedList(Node* head);
     void SearchDataFromLinkedList(Node* head, int iData, int &iFirstPos, int &iCount);
+    void ReverseLinkedList(Node* head);
     void PrintLinkedList(Node* head);
     int  GetLinkedListLength(Node* head);
     bool IsEmptyLinkedList(Node* head);

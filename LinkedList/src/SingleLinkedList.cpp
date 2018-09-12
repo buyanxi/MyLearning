@@ -163,6 +163,28 @@ void CSingleLinkedList::SearchDataFromLinkedList(Node* head, int iData, int &iFi
     }
 }
 
+void CSingleLinkedList::ReverseLinkedList(Node* head)
+{
+    if (NULL == head) {
+        printf("The linked list is non-existent!\n");
+        return;
+    }
+
+    ListNode *pPrev = NULL;
+    ListNode *pNext = NULL;
+    ListNode *p = head->next;
+    head->next = NULL;
+
+    while (p) {
+        pNext = p->next;
+        p->next = pPrev;
+        pPrev = p;
+        p = pNext;
+    }
+
+    head->next = pPrev;
+}
+
 void CSingleLinkedList::PrintLinkedList(Node* head)
 {
     if (NULL == head) {

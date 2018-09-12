@@ -17,6 +17,9 @@ int main()
     head_Tail = g_cSingleLinkedList.TailCreateLinkedList();
     g_cSingleLinkedList.PrintLinkedList(head_Tail);
 
+    g_cSingleLinkedList.ReverseLinkedList(head_Tail);
+    g_cSingleLinkedList.PrintLinkedList(head_Tail);
+
     g_cSingleLinkedList.InsertLinkedList(head_Tail, 5, 1);
     g_cSingleLinkedList.PrintLinkedList(head_Tail);
 
@@ -45,15 +48,18 @@ int main()
 //    head_Head = g_cCircleLinkedList.HeadCreateLinkedList();
 //    g_cCircleLinkedList.PrintLinkedList(head_Head);
 
-    ListNode* head_Head;
-    head_Head = g_cCircleLinkedList.TailCreateLinkedList();
-    g_cCircleLinkedList.PrintLinkedList(head_Head);
+    ListNode* head_Tail;
+    head_Tail = g_cCircleLinkedList.TailCreateLinkedList();
+    g_cCircleLinkedList.PrintLinkedList(head_Tail);
 
-    g_cCircleLinkedList.InsertLinkedList(head_Head, 5, 5);
-    g_cCircleLinkedList.PrintLinkedList(head_Head);
+    g_cCircleLinkedList.ReverseLinkedList(head_Tail);
+    g_cCircleLinkedList.PrintLinkedList(head_Tail);
 
-    g_cCircleLinkedList.DeleteDataFromLinkedList(head_Head, 4);
-    g_cCircleLinkedList.PrintLinkedList(head_Head);
+    g_cCircleLinkedList.InsertLinkedList(head_Tail, 5, 5);
+    g_cCircleLinkedList.PrintLinkedList(head_Tail);
+
+    g_cCircleLinkedList.DeleteDataFromLinkedList(head_Tail, 4);
+    g_cCircleLinkedList.PrintLinkedList(head_Tail);
 
 
 

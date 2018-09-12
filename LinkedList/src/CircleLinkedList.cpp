@@ -128,6 +128,28 @@ void CCircleLinkedList::DeleteDataFromLinkedList(Node* head, int iData)
     }
 }
 
+void CCircleLinkedList::ReverseLinkedList(Node* head)
+{
+    if (NULL == head) {
+        printf("The linked list is non-existent!\n");
+        return;
+    }
+
+    ListNode *pPrev = head;
+    ListNode *pNext = NULL;
+    ListNode *p = head->next;
+    head->next = NULL;
+
+    while (p != head) {
+        pNext = p->next;
+        p->next = pPrev;
+        pPrev = p;
+        p = pNext;
+    }
+
+    head->next = pPrev;
+}
+
 void CCircleLinkedList::PrintLinkedList(LinkedList head)
 {
     if (NULL == head) {

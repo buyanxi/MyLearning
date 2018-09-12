@@ -23,6 +23,7 @@ public:
     LinkedList TailCreateLinkedList();
     void InsertLinkedList(Node* head, int iData, int iPos);
     void DeleteDataFromLinkedList(Node* head, int iData);
+    void ReverseLinkedList(Node* head);
     void PrintLinkedList(LinkedList head);
 
 private:
