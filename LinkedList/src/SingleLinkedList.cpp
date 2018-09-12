@@ -120,7 +120,7 @@ void CSingleLinkedList::DeleteDataFromLinkedList(Node* head, int iData)
     }
 }
 
-void CSingleLinkedList::DeleteAllLinkedList(Node* head)
+void CSingleLinkedList::ClearLinkedList(Node* head)
 {
     if (NULL == head) {
         printf("The linked list is non-existent!\n");

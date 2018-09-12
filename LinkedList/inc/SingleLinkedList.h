@@ -22,8 +22,8 @@ public:
     LinkedList* TailCreateLinkedList();
     void InsertLinkedList(Node* head, int iData, int iPos);
     void DeleteDataFromLinkedList(Node* head, int iData);
-    void DeleteAllLinkedList(Node* head);
-    void  SearchDataFromLinkedList(Node* head, int iData, int &iFirstPos, int &iCount);
+    void ClearLinkedList(Node* head);
+    void SearchDataFromLinkedList(Node* head, int iData, int &iFirstPos, int &iCount);
     void PrintLinkedList(Node* head);
     bool IsEmptyLinkedList(Node* head);
 };

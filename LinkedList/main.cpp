@@ -26,7 +26,7 @@ int main()
     int iFirstPos = 0, iCount = 0;
     g_cSingleLinkedList.SearchDataFromLinkedList(head_Tail, 3, iFirstPos, iCount);
 
-    g_cSingleLinkedList.DeleteAllLinkedList(head_Tail);
+    g_cSingleLinkedList.ClearLinkedList(head_Tail);
     bool bFlag1 = g_cSingleLinkedList.IsEmptyLinkedList(head_Tail);
     if (!bFlag1) {
         g_cSingleLinkedList.PrintLinkedList(head_Tail);
