@@ -10,6 +10,6 @@ typedef struct Node
 {
     int data;
     Node* next;
-}LinkedList;
+}ListNode, *LinkedList;
 
 #endif // CXX_NODETYPE_H

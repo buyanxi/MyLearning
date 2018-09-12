@@ -10,7 +10,7 @@ CSingleLinkedList::~CSingleLinkedList()
 
 }
 
-LinkedList* CSingleLinkedList::HeadCreateLinkedList()
+LinkedList CSingleLinkedList::HeadCreateLinkedList()
 {
     Node* head;
     head = new Node;
@@ -32,7 +32,7 @@ LinkedList* CSingleLinkedList::HeadCreateLinkedList()
     return head;
 }
 
-LinkedList* CSingleLinkedList::TailCreateLinkedList()
+LinkedList CSingleLinkedList::TailCreateLinkedList()
 {
     Node* head;
     head = new Node;
@@ -65,7 +65,7 @@ void CSingleLinkedList::InsertLinkedList(Node* head, int iData, int iPos)
     Node* pNewNode = new Node;
     pNewNode->data = iData;
 
-    int iCount = -1;
+    int iCount = 0;
     while (head->next) {
         ++iCount;
         if (iPos == iCount) {

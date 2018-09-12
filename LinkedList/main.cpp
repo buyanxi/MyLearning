@@ -1,20 +1,23 @@
 #include <iostream>
 #include "SingleLinkedList.h"
+#include "CircleLinkedList.h"
 
 using namespace std;
 
-CSingleLinkedList g_cSingleLinkedList;
+CSingleLinkedList  g_cSingleLinkedList;
+CCircleLinkedList  g_cCircleLinkedList;
 int main()
 {
 //    LinkedList *head_Head;
 //    head_Head = g_cSingleLinkedList.HeadCreateLinkedList();
 //    g_cSingleLinkedList.PrintLinkedList(head_Head);
 
-    LinkedList *head_Tail;
+#if 0
+    ListNode* head_Tail;
     head_Tail = g_cSingleLinkedList.TailCreateLinkedList();
     g_cSingleLinkedList.PrintLinkedList(head_Tail);
 
-    g_cSingleLinkedList.InsertLinkedList(head_Tail, 5, 8);
+    g_cSingleLinkedList.InsertLinkedList(head_Tail, 5, 1);
     g_cSingleLinkedList.PrintLinkedList(head_Tail);
 
     g_cSingleLinkedList.DeleteDataFromLinkedList(head_Tail, 2);
@@ -36,6 +39,24 @@ int main()
     else {
         printf("The linked list is cleared successfully!\n");
     }
+#endif
+
+//    ListNode* head_Head;
+//    head_Head = g_cCircleLinkedList.HeadCreateLinkedList();
+//    g_cCircleLinkedList.PrintLinkedList(head_Head);
+
+    ListNode* head_Head;
+    head_Head = g_cCircleLinkedList.TailCreateLinkedList();
+    g_cCircleLinkedList.PrintLinkedList(head_Head);
+
+    g_cCircleLinkedList.InsertLinkedList(head_Head, 5, 5);
+    g_cCircleLinkedList.PrintLinkedList(head_Head);
+
+    g_cCircleLinkedList.DeleteDataFromLinkedList(head_Head, 4);
+    g_cCircleLinkedList.PrintLinkedList(head_Head);
+
+
+
 
     return 0;
 }
