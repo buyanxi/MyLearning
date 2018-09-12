@@ -24,7 +24,8 @@ public:
     void InsertLinkedList(Node* head, int iData, int iPos);
     void DeleteDataFromLinkedList(Node* head, int iData);
     void ReverseLinkedList(Node* head);
-    void PrintLinkedList(LinkedList head);
+    void PrintLinkedList(Node* head);
+    bool IsLinkedListLoop(Node* head);
 
 private:
     ListNode* m_pHead;

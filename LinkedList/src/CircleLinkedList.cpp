@@ -150,7 +150,7 @@ void CCircleLinkedList::ReverseLinkedList(Node* head)
     head->next = pPrev;
 }
 
-void CCircleLinkedList::PrintLinkedList(LinkedList head)
+void CCircleLinkedList::PrintLinkedList(Node* head)
 {
     if (NULL == head) {
         printf("The linked list is non-existent!\n");
@@ -166,4 +166,32 @@ void CCircleLinkedList::PrintLinkedList(LinkedList head)
     }
     printf("\n");
 
+}
+
+bool CCircleLinkedList::IsLinkedListLoop(Node* head)
+{
+    if (NULL == head) {
+        printf("The linked list is non-existent!\n");
+        return false;
+    }
+
+    ListNode *pFast, *pSlow;
+    pFast = pSlow = head;
+
+    while (pFast && pSlow) {
+        pSlow = pSlow->next;
+
+        if (pFast->next) {
+            pFast->next->next;
+        }
+        else {
+            pFast = pFast->next;
+        }
+
+        if (pFast == pSlow) {
+            return true;
+        }
+    }
+
+    return false;
 }

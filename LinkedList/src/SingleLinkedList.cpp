@@ -230,3 +230,31 @@ bool CSingleLinkedList::IsEmptyLinkedList(Node* head)
         return false;
     }
 }
+
+bool CSingleLinkedList::IsLinkedListLoop(Node* head)
+{
+    if (NULL == head) {
+        printf("The linked list is non-existent!\n");
+        return false;
+    }
+
+    ListNode *pFast, *pSlow;
+    pFast = pSlow = head;
+
+    while (pFast && pSlow) {
+        pSlow = pSlow->next;
+
+        if (pFast->next) {
+            pFast->next->next;
+        }
+        else {
+            pFast = pFast->next;
+        }
+
+        if (pFast == pSlow) {
+            return true;
+        }
+    }
+
+    return false;
+}

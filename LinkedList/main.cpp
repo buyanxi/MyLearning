@@ -34,6 +34,14 @@ int main()
     int iFirstPos = 0, iCount = 0;
     g_cSingleLinkedList.SearchDataFromLinkedList(head_Tail, 3, iFirstPos, iCount);
 
+    bool bLoopFlag = g_cSingleLinkedList.IsLinkedListLoop(head_Tail);
+    if (bLoopFlag) {
+        printf("The linked list has loop!\n");
+    }
+    else {
+        printf("The linked list has not loop!\n");
+    }
+
     g_cSingleLinkedList.ClearLinkedList(head_Tail);
     bool bFlag1 = g_cSingleLinkedList.IsEmptyLinkedList(head_Tail);
     if (!bFlag1) {
@@ -44,6 +52,7 @@ int main()
     }
 #endif
 
+#if 1
 //    ListNode* head_Head;
 //    head_Head = g_cCircleLinkedList.HeadCreateLinkedList();
 //    g_cCircleLinkedList.PrintLinkedList(head_Head);
@@ -61,8 +70,14 @@ int main()
     g_cCircleLinkedList.DeleteDataFromLinkedList(head_Tail, 4);
     g_cCircleLinkedList.PrintLinkedList(head_Tail);
 
-
-
+    bool bLoopFlag = g_cCircleLinkedList.IsLinkedListLoop(head_Tail);
+    if (bLoopFlag) {
+        printf("The linked list has loop!\n");
+    }
+    else {
+        printf("The linked list has not loop!\n");
+    }
+#endif
 
     return 0;
 }

@@ -28,6 +28,7 @@ public:
     void PrintLinkedList(Node* head);
     int  GetLinkedListLength(Node* head);
     bool IsEmptyLinkedList(Node* head);
+    bool IsLinkedListLoop(Node* head);
 };
 
 #endif // CXX_NODETYPE_H
