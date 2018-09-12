@@ -16,12 +16,12 @@ LinkedList* CSingleLinkedList::HeadCreateLinkedList()
     head = new Node;
     head->next = NULL;
 
-    int iNum;
+    int iLength;
     printf("Please enter the number of linked list:");
-    scanf("%d", &iNum);
+    scanf("%d", &iLength);
 
     Node *p = head;
-    for (int i = 0; i< iNum; ++i) {
+    for (int i = 0; i< iLength; ++i) {
         Node *pNewNode = new Node;
         printf("Please enter the data of new node %d:", i);
         scanf("%d", &pNewNode->data);
@@ -38,12 +38,12 @@ LinkedList* CSingleLinkedList::TailCreateLinkedList()
     head = new Node;
     head->next = NULL;
 
-    int iNum;
+    int iLength;
     printf("Please enter the number of linked list:");
-    scanf("%d", &iNum);
+    scanf("%d", &iLength);
 
     Node *p = head;
-    for (int i = 0; i< iNum; ++i) {
+    for (int i = 0; i< iLength; ++i) {
         Node *pNewNode = new Node;
         printf("Please enter the data of new node %d:", i);
         scanf("%d", &pNewNode->data);
