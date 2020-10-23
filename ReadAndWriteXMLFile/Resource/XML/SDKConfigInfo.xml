@@ -1,7 +1,7 @@
 <SDKConfigInfo>
     <iCarDesignType>1</iCarDesignType>
-    <iDriverPos>1</iDriverPos>
-    <iCameraType>1</iCameraType>
+    <iDriverPos>0</iDriverPos>
+    <iCameraType>0</iCameraType>
     <iImageType>1</iImageType>
     <iImageMode>1</iImageMode>
     <iScreenType>1</iScreenType>
