@@ -1,0 +1,13 @@
+解决ubuntu环境下，opencv在图像上putText中文乱码问题
+
+1. cp simsun.ttc to /usr/share/fonts/
+
+2. in the project directory, open terminal, and then execting the follow commands
+   mkdir build
+   cd build
+   cmake ..
+   make
+
+3. cd ../
+
+4. ./puTextChinese
