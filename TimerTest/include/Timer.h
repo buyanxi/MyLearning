@@ -15,7 +15,7 @@ public:
     ~Timer();
 
     template<typename Fun>
-    void Start(Fun fun, int interval, TimerType timeType = CIRCLE);
+    void Start(Fun fun(std::string), int interval, TimerType timeType = CIRCLE, std::string funPara = "");
     void Stop();
 
 private:
@@ -25,7 +25,8 @@ private:
     friend class TimerManager;
     TimerManager& manager_;
     TimerType timerType_;
-    boost::function<void(void)> timerFun_;
+    boost::function<void(std::string)> timerFun_;
+    std::string funPara_;
     int interval_;
     unsigned long long expires_;
 
@@ -56,11 +57,12 @@ private:
 };
 
 template<typename Fun>
-inline void Timer::Start(Fun fun, int interval, TimerType timeType)
+inline void Timer::Start(Fun fun(std::string), int interval, TimerType timeType, std::string funPara)
 {
     Stop();
     interval_ = interval;
     timerFun_ = fun;
+    funPara_ = funPara;
     timerType_ = timeType;
     if (interval_ < 0) {
         interval_ = 24/*h*/ * 60/*m*/ * 60/*s*/ * 1000/*ms*/ + interval_;

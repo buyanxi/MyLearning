@@ -38,7 +38,7 @@ void Timer::OnTimer(unsigned long long now)
         expires_ = 24/*h*/ * 60/*m*/ * 60/*s*/ * 1000/*ms*/ + now;
         manager_.AddTimer(this);
     }
-    timerFun_();
+    timerFun_(funPara_);
 }
 
 //////////////////////////////////////////////////////////////////////////

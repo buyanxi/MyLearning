@@ -6,14 +6,14 @@
 using namespace std;
 
 
-void TimingTimerHandle()
+void TimingTimerHandle(std::string strPara)
 {
-    printf("*******TimingTimerHandle*********\n");
+    printf("*******TimingTimerHandle: %s*********\n", strPara.data());
 }
 
-void CycleTimerHandle()
+void CycleTimerHandle(std::string strPara)
 {
-    printf("*******CycleTimerHandle*********\n");
+    printf("*******CycleTimerHandle: %s*********\n", strPara.data());
 }
 
 void* on_timer_handle(void*)
@@ -23,9 +23,9 @@ void* on_timer_handle(void*)
     TimerManager cTM;
     Timer cTimer(cTM);
 
-    //cTimer.Start(&CycleTimerHandle, 10 * 1000, Timer::CIRCLE);
+    cTimer.Start(&CycleTimerHandle, 1 * 1000, Timer::CIRCLE, "mytest");
 
-    cTimer.Start(&TimingTimerHandle, 10 * 1000, Timer::ONCE);
+    //cTimer.Start(&TimingTimerHandle, 10 * 1000, Timer::ONCE, "mytest");
 
     while (true) {
         cTM.DetectTimers();
