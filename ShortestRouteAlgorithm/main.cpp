@@ -20,8 +20,6 @@ typedef struct {
 	string  route = "A";
 }POINT;
 
-POINT A, B, C, D, E, F;
-
 void Dijkstra(POINT* startPoint, POINT* endPoint, POINT* piontArray, int pointNum)
 {
 	startPoint->curVaule = 0;
@@ -66,6 +64,8 @@ void Dijkstra(POINT* startPoint, POINT* endPoint, POINT* piontArray, int pointNu
 
 int main()
 {
+	POINT A, B, C, D, E, F;
+
 	for (int i = 0; i < 6; ++i) {
         A.curVaule = INF;
         A.name = 'A';
